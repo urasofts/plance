@@ -54,6 +54,17 @@ if (isset($_SESSION['user_id'])) {
         <i class="fa-solid fa-circle-arrow-left fs-6"></i> <?= htmlspecialchars($nav_back_text) ?>
     </a>
 
+    <div id="navbar-tutorial-actions" class="navbar-tutorial-actions">
+        <button id="navbar-iniciar-tutorial" class="btn-tutorial btn-outline-light">
+            <i class="bi bi-question-circle"></i>
+            Iniciar tutorial
+        </button>
+
+        <button id="navbar-cerrar-tutorial" class="btn-tutorial btn-outline-light" hidden>
+            Cerrar tutorial
+        </button>
+    </div>
+
     <div class="ms-auto d-flex align-items-center gap-2">
 
         <!-- Nombre del usuario -->
@@ -87,7 +98,8 @@ if (isset($_SESSION['user_id'])) {
             <div class="dropdown">
                 <button class="dropbtn">Opciones ▼</button>
                 <div class="dropdown-content">
-                    <a href="<?= $nav_base ?>login.php"><i class="bi bi-box-arrow-in-right"></i> Iniciar sesión / Registrarse</a>
+                    <a href="<?= $nav_base ?>login.php"><i class="bi bi-box-arrow-in-right"></i> Iniciar sesión /
+                        Registrarse</a>
                 </div>
             </div>
         <?php endif; ?>

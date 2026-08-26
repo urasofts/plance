@@ -14,6 +14,10 @@
         href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Barlow:wght@400;500;600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/driver.js@1.3.1/dist/driver.css">
+
+    <link rel="stylesheet"
+        href="../assets/css/components/driver-theme.css?v=<?php echo filemtime($__publicDir . '/../assets/css/components/driver-theme.css'); ?>">
 
     <!-- Tu CSS -->
     <link rel="stylesheet"
@@ -37,7 +41,7 @@
 
             <!-- Botones para filtrar por servicio PlaceToPay -->
             <div class="d-flex justify-content-center mb-4">
-                <div class="servicio-toggle" role="group" aria-label="Filtrar ropa por servicio">
+                <div class="servicio-toggle" role="group" aria-label="Filtrar ropa por servicio" id="tipo-flujo">
                     <button type="button" class="servicio-btn active" data-filter="web">API Link de pagos</button>
                     <button type="button" class="servicio-btn" data-filter="api">N/A</button>
                 </div>
@@ -46,12 +50,12 @@
             <div class="row" style="text-align: center;" id="games-row">
 
                 <div class="col-md-4 mb-4" data-servicio="web">
-                    <div class="card h-100">
+                    <div class="card h-100" id="tarjeta">
                         <div class="card-img-wrapper">
                             <img src="https://kickbol.com/wp-content/uploads/2023/08/English-Premier-League-1.png"
                                 class="card-img-top" alt="Premier League">
                         </div>
-                        <div class="linkp">API Link de pagos</div>
+                        <div class="linkp" id="tipo-link-pagos">API Link de pagos</div>
                         <div class="card-body">
                             <div class="servicio1">API Link de pagos</div>
                             <h5 class="card-title">Premier League</h5>
@@ -117,6 +121,8 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/validaciones.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/driver.js@1.3.1/dist/driver.js.iife.js"></script>
+    <script src="../assets/js/components/driver-tours/tour-deportivo.js"></script>
 </body>
 
 </html>

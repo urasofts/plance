@@ -1,0 +1,43 @@
+:root {
+    --color-primary: #FF6C0C;
+    --color-secondary-1: #00CFB4;
+    --color-secondary-2: #4C5F71;
+    --color-secondary-3: #0062A8;
+    --color-secondary-4: #1E212C;
+    --color-secondary-5: #7D868C;
+    --text-main: #f1f5f9;
+}
+
+
+.driver-popover {
+    background: #1e212c;
+    color: var(--text-main);
+    border-radius: 16px;
+    border-color: var(--color-primary);
+    border-width: 1px;
+    border-style: solid
+}
+
+.driver-popover-title {
+    color: var(--color-primary);
+}
+
+.driver-popover-progress-text {
+    color: var(--text-main);
+}
+
+/* .driver-popover-arrow {
+    color:var(--color-secondary-3);
+    width: 20px; 
+} */
+
+.driver-popover .driver-popover-close-btn:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+/* .driver-popover .driver-popover-close-btn:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+    border-radius: 4px;
+} */

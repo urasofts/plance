@@ -1,4 +1,5 @@
 <?php
-session_start();
-$__publicDir = __DIR__;
-require __DIR__ . '/../views/index.php';
+if (session_status() === PHP_SESSION_NONE) {
+	session_start();
+}
+require __DIR__ . '/index2.php';

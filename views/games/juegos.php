@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php require_once '../php/theme_attr.php'; ?>
-<html lang="es"<?= $data_theme_attr ?? '' ?>>
+<html lang="es" <?= $data_theme_attr ?? '' ?>>
 
 <head>
     <meta charset="UTF-8">
@@ -16,6 +16,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/driver.js@1.3.1/dist/driver.css">
+
+    <link rel="stylesheet"
+        href="../assets/css/components/driver-theme.css?v=<?php echo filemtime($__publicDir . '/../assets/css/components/driver-theme.css'); ?>">
+
 
     <!-- Tu CSS -->
     <link rel="stylesheet"
@@ -49,7 +54,7 @@
 
                 <!-- Botones para filtrar por servicio PlaceToPay -->
                 <div class="d-flex justify-content-center mb-4">
-                    <div class="servicio-toggle" role="group" aria-label="Filtrar juegos por servicio">
+                    <div class="servicio-toggle" role="group" aria-label="Filtrar juegos por servicio" id="tipo-flujo">
                         <button type="button" class="servicio-btn active" data-filter="web">Web Checkout</button>
                         <button type="button" class="servicio-btn" data-filter="api">API Gateway</button>
                     </div>
@@ -59,10 +64,10 @@
 
                     <!-- Web Checkout - COD Mobile -->
                     <div class="col-md-4 mb-4" data-servicio="web">
-                        <div class="card h-100">
+                        <div class="card h-100" id="tarjeta">
                             <img src="https://media.tycsports.com/files/2021/07/15/307410/cod-mobile-todas-las-novedades-de-la-beta-de-julio-_862x485.jpg"
                                 class="card-img-top" alt="Call of Duty Mobile">
-                            <div class="pagob">Pago Básico</div>
+                            <div class="pagob" id="tipo-servicio-basico">Pago Básico</div>
                             <div class="card-body">
                                 <div class="servicio1">Web Checkout</div>
                                 <h5 class="card-title">Call of Duty Mobile</h5>
@@ -152,7 +157,7 @@
                         <div class="card h-100">
                             <img src="https://cdn.donatov.net/cover/pack-14533-1771960014.webp" class="card-img-top"
                                 alt="Rainbow Six Siege Mobile">
-                            <div class="pagob">Pago Mixto</div>
+                            <div class="pagob" id="tipo-servicio-mixto">Pago Mixto</div>
                             <div class="card-body">
                                 <div class="servicio1">Web Checkout</div>
                                 <h5 class="card-title">Rainbow Six Siege Mobile</h5>
@@ -169,7 +174,8 @@
 
     <script src="../assets/js/pages/games/juegos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/validaciones.js"></script>
-</body>
+    <script src="../assets/js/validaciones.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/driver.js@1.3.1/dist/driver.js.iife.js"></script>
+    <script src="../assets/js/components/driver-tours/tour-juegos.js"></script>
 
 </html>
