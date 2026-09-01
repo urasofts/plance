@@ -78,7 +78,7 @@
                     </div>
 
                     <!-- Web Checkout - Free Fire -->
-                    <div class="col-md-4 mb-4" data-servicio="web">
+                    <!-- <div class="col-md-4 mb-4" data-servicio="web">
                         <div class="card h-100">
                             <img src="https://imagenes.hobbyconsolas.com/files/image_1280_720/uploads/imagenes/2023/04/25/690d3b41af1b7.jpeg"
                                 class="card-img-top" alt="Free Fire">
@@ -90,10 +90,10 @@
                                 <a href="../games/freefire.php" class="btn btn-productos">Productos</a>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                     <!-- Web Checkout - eFootball -->
-                    <div class="col-md-4 mb-4" data-servicio="web">
+                    <!-- <div class="col-md-4 mb-4" data-servicio="web">
                         <div class="card h-100">
                             <img src="https://www.konami.com/efootball/s/img/main_page_1.png?v=930" class="card-img-top"
                                 alt="Efootball">
@@ -105,10 +105,10 @@
                                 <a href="../games/efootball.php" class="btn btn-productos">Productos</a>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                     <!-- Web Checkout - EA Sports -->
-                    <div class="col-md-4 mb-4" data-servicio="web">
+                    <!-- <div class="col-md-4 mb-4" data-servicio="web">
                         <div class="card h-100">
                             <img src="https://media.es.wired.com/photos/64dad651532fc59e0e8d53a4/16:9/w_1280,c_limit/EA%20Sports.jpg"
                                 class="card-img-top" alt="EA Sports">
@@ -120,7 +120,7 @@
                                 <a href="../games/easport.php" class="btn btn-productos">Productos</a>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                     <!-- API Gateway - PUBG -->
                     <div class="col-md-4 mb-4" data-servicio="api">
@@ -142,7 +142,7 @@
                         <div class="card h-100">
                             <img src="https://cdn.aptoide.com/imgs/6/8/c/68c301631138548dca9af0d780cccff9_fgraphic.png"
                                 class="card-img-top" alt="Blood Strike">
-                            <div class="pagob">Pago Básico</div>
+                            <div class="pagob">Pago Mixto</div>
                             <div class="card-body">
                                 <div class="servicio2">API Gateway</div>
                                 <h5 class="card-title">Blood Strike</h5>

@@ -29,10 +29,10 @@
     <?php
     $categories = [
         [
-            'title' => 'Juegos Móviles',
+            'title' => 'Ejemplo: Juegos Móviles',
             'link' => 'games/juegos.php',
             'method' => 'Pago Básico - Pago Mixto',
-            'description' => 'Ideal para compras rápidas de contenido digital y experiencias móviles con un flujo de pago simple, seguro y directo.',
+            'description' => 'Ideal para ventas de productos o servicios con un proceso de pago directo, seguro y de rápida confirmación.',
             'accent' => '#FF6C0C',
             'secondary' => '#FF9C45',
             'icon_class' => 'fa-solid fa-gamepad',
@@ -44,7 +44,7 @@
             ]
         ],
         [
-            'title' => 'Plataformas Digitales',
+            'title' => 'Ejemplo: Plataformas Digitales',
             'link' => 'plataformas/suscripciones.php',
             'method' => 'Recurrencia y Suscripción',
             'description' => 'Diseñada para servicios online con cobros periódicos, renovaciones automáticas y gestión de suscripciones.',
@@ -59,10 +59,10 @@
             ]
         ],
         [
-            'title' => 'Ropa',
+            'title' => 'Ejemplo: Tiendas de ropa',
             'link' => 'textil/textiles.php',
             'method' => 'Api link de pagos',
-            'description' => 'Perfecta para tiendas de moda y ventas de productos físicos con confirmación rápida del pago.',
+            'description' => 'Permite crear enlaces de pago para compartir con clientes y recibir pagos sin desarrollar un checkout propio.',
             'accent' => '#0062A8',
             'secondary' => '#3B87D7',
             'icon_class' => 'fa-solid fa-tshirt',
@@ -74,10 +74,10 @@
             ]
         ],
         [
-            'title' => 'Tiquetes de Avión',
+            'title' => 'Ejemplo: Tiquetes de Avión',
             'link' => 'dispersiones/dispersion.php',
             'method' => 'Dispersiones',
-            'description' => 'Pensada para reservas aéreas y pagos de viaje con un proceso claro y confiable para el usuario.',
+            'description' => 'Permite distribuir automáticamente los fondos de una transacción entre múltiples destinatarios según las reglas definidas.',
             'accent' => '#4C5F71',
             'secondary' => '#8193A5',
             'icon_class' => 'fa-solid fa-plane',
@@ -89,10 +89,10 @@
             ]
         ],
         [
-            'title' => 'Hospedaje',
+            'title' => 'Ejemplo: Hospedaje',
             'link' => 'reservasiones/reservas.php',
             'method' => 'Preautorización',
-            'description' => 'Ideal para reservas de hotel y servicios temporales con pagos seguros y confirmación inmediata.',
+            'description' => 'Reserva fondos en una tarjeta sin realizar el cobro inmediato, permitiendo capturar o ajustar el valor posteriormente.',
             'accent' => '#7D868C',
             'secondary' => '#A8B1BA',
             'icon_class' => 'fa-solid fa-hotel',
@@ -115,12 +115,12 @@
                 </div>
                 <div class="col-lg-4">
                     <div class="hero-panel" id="lista-integraciones">
-                        <ul class="mb-0 ps-3">
-                            <li>Pago Básico</li>
-                            <li>Recurrencia y Suscripción</li>
-                            <li>Link de pagos con API</li>
-                            <li>Dispersiones</li>
-                            <li>Preautorización</li>
+                        <ul class="mb-0 ps-3 hero-panel-list">
+                            <li><a href="games/juegos.php">Pago Básico</a></li>
+                            <li><a href="plataformas/suscripciones.php">Recurrencia y Suscripción</a></li>
+                            <li><a href="textil/textiles.php">Link de pagos con API</a></li>
+                            <li><a href="dispersiones/dispersion.php">Dispersiones</a></li>
+                            <li><a href="reservasiones/reservas.php">Preautorización</a></li>
                         </ul>
                     </div>
                 </div>
@@ -143,12 +143,12 @@
                                 <i class="bi bi-shield-check"></i>
                                 <?= htmlspecialchars($category['method']) ?>
                             </div>
-                            <div class="card-title-row">
+                            <p class="card-text mb-4"<?= $index === 0 ? ' id="tour-card-description"' : '' ?>><?= htmlspecialchars($category['description']) ?></p>
+                            <div class="card-title-row mt-auto">
                                 <span class="title-icon"><i class="<?= htmlspecialchars($category['icon_class']) ?>"></i></span>
                                 <h5 class="card-title mb-0"<?= $index === 0 ? ' id="tour-card-title"' : '' ?>><?= htmlspecialchars($category['title']) ?></h5>
                             </div>
-                            <p class="card-text mb-4"<?= $index === 0 ? ' id="tour-card-description"' : '' ?>><?= htmlspecialchars($category['description']) ?></p>
-                            <a href="<?= htmlspecialchars($category['link']) ?>" class="btn btn-continue mt-auto align-self-start">Ver categoría <i class="bi bi-arrow-right ms-1"></i></a>
+                            <a href="<?= htmlspecialchars($category['link']) ?>" class="btn btn-continue mt-3 align-self-start">Ver categoría <i class="bi bi-arrow-right ms-1"></i></a>
                         </div>
                     </div>
                 </div>

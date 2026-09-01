@@ -59,6 +59,79 @@ body.tutorial-active #navbar-tutorial-actions.driver-active-element .btn-tutoria
     transition: 0.3s;
 }
 
+.tutorial-help-wrap {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-tutorial-help {
+    width: 28px;
+    height: 28px;
+    border: 1px solid var(--color-primary);
+    border-radius: 50%;
+    background: rgba(30, 33, 44, 0.92);
+    color: var(--color-primary);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: help;
+    padding: 0;
+    transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-tutorial-help:hover,
+.btn-tutorial-help:focus-visible {
+    background: var(--color-primary);
+    color: #1e212c;
+    transform: scale(1.08);
+}
+
+.btn-tutorial-help:focus-visible {
+    outline: 2px solid var(--text-main);
+    outline-offset: 3px;
+}
+
+.tutorial-help-popover {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%) translateY(-4px);
+    width: 280px;
+    padding: 14px 16px;
+    border: 1px solid var(--color-primary);
+    border-radius: 12px;
+    background: #1e212c;
+    color: var(--text-main);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.38);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    z-index: 1000000004;
+}
+
+.tutorial-help-wrap:hover .tutorial-help-popover,
+.tutorial-help-wrap:focus-within .tutorial-help-popover {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+}
+
+.tutorial-help-popover strong {
+    display: block;
+    color: var(--color-primary);
+    font-size: 0.95rem;
+    margin-bottom: 6px;
+}
+
+.tutorial-help-popover p {
+    margin: 0;
+    color: rgba(241, 245, 249, 0.82);
+    font-size: 0.86rem;
+    line-height: 1.5;
+}
+
 .navbar-brand img {
     filter: brightness(0) saturate(100%) invert(60%) sepia(89%) saturate(3000%) hue-rotate(0deg) brightness(100%) contrast(100%);
 }

@@ -73,24 +73,25 @@ document.addEventListener('DOMContentLoaded', () => {
                 popover: {
                     title: 'Método de integración',
                     description:
-                        'Esta etiqueta resume el tipo de flujo de pago de la categoría, para identificarlo antes de entrar.'
+                        'Indica el tipo de flujo de pago de la categoría, para identificarlo antes de entrar.'
                 }
-            },
-            {
-                element: '#tour-card-title',
-                popover: {
-                    title: 'Título de la categoría',
-                    description:
-                        'El nombre indica el contexto del comercio o industria al que corresponde este ejemplo de integración.'
-                }
-            },
+            },            
             {
                 element: '#tour-card-description',
                 popover: {
                     title: 'Descripción de la categoría',
                     description:
-                        'Este texto explica cuándo conviene usar este flujo para que elijas el ejemplo más adecuado.',
-                    onNextClick: () => {
+                        'Explica cuándo conviene usar este flujo para que elijas el ejemplo más adecuado.'
+                    
+                }
+            },
+            {
+                element: '#tour-card-title',
+                popover: {
+                    title: 'Comercio Ejemplo',
+                    description:
+                        'Muestra un ejemplo para el tipo de integración que se está presentando.',
+                        onNextClick: () => {
                         localStorage.setItem('tutorial', 'pendiente');
                         driver.destroy();
 

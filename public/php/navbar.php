@@ -54,11 +54,33 @@ if (isset($_SESSION['user_id'])) {
         <i class="fa-solid fa-circle-arrow-left fs-6"></i> <?= htmlspecialchars($nav_back_text) ?>
     </a>
 
+    <?php
+        $is_index_view = (bool)($show_tutorial_help ?? false);
+        if (!$is_index_view) {
+            $current_path = $_SERVER['PHP_SELF'] ?? '';
+            if (strpos($current_path, '/public/index2.php') !== false || strpos($current_path, 'index2.php') !== false || basename($current_path) === 'index2.php') {
+                $is_index_view = true;
+            }
+        }
+    ?>
+
     <div id="navbar-tutorial-actions" class="navbar-tutorial-actions">
         <button id="navbar-iniciar-tutorial" class="btn-tutorial btn-outline-light">
             <i class="bi bi-question-circle"></i>
             Iniciar tutorial
         </button>
+
+        <?php if ($is_index_view): ?>
+            <div class="tutorial-help-wrap" id="tutorial-help-wrap">
+                <button id="navbar-tutorial-help" class="btn-tutorial-help" type="button" aria-label="Más información sobre el tutorial" aria-describedby="tutorial-help-popover">
+                    <i class="bi bi-question-lg" aria-hidden="true"></i>
+                </button>
+                <div id="tutorial-help-popover" class="tutorial-help-popover" role="tooltip">
+                    <strong>¿Qué te muestra el tutorial?</strong>
+                    <p>Recibirás explicaciones paso a paso en cada vista, el recorrido te ayudará a comprender la función de cada sección, categoría e integración.</p>
+                </div>
+            </div>
+        <?php endif; ?>
 
         <button id="navbar-cerrar-tutorial" class="btn-tutorial btn-outline-light" hidden>
             Cerrar tutorial

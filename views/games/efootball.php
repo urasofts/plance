@@ -16,7 +16,10 @@
     rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
   <link rel="stylesheet" href="assets/css/">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/driver.js@1.3.1/dist/driver.css">
     <link rel="stylesheet" href="../assets/css/estilos.css">
+  <link rel="stylesheet"
+    href="../assets/css/components/driver-theme.css?v=<?php echo filemtime($__publicDir . '/../assets/css/components/driver-theme.css'); ?>">
 </head>
 <link rel="stylesheet" href="../assets/css/pages/games/efootball.css">
 
@@ -46,7 +49,7 @@
 
     <!-- LEFT: Products Panel -->
     <section class="products-panel">
-      <div class="section-block">
+      <div class="section-block" id="bloque-productos">
         <p class="section-label">Elige el importe</p>
         <div class="products-grid" id="productsGrid">
 
@@ -194,5 +197,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="assets/js/validaciones.js"></script>
 <script src="assets/js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/driver.js@1.3.1/dist/driver.js.iife.js"></script>
+<script src="../assets/js/components/driver-tours/tour-efootball.js"></script>
 
 </html>

@@ -37,6 +37,7 @@ if (!isset($_SESSION['usuario'])) {
 
 <body class="d-flex flex-column min-vh-100">
     <?php
+    $show_tutorial_help = true;
     $nav_back_url = "index.php";
     $nav_back_text = "Atrás";
     $nav_base = "./";
@@ -45,22 +46,34 @@ if (!isset($_SESSION['usuario'])) {
 
     <main class="container px-3 py-2">
 
-        <div class="hero-panel">
-            <p class="hero-copy">
-                Activa el tutorial para una guía paso a paso.
-            </p>
-        </div>
-
         <section class="hero-header text-center pt-4">
             <h1 id="heroTitle" class="hero-title">
                 Bienvenido&nbsp;&nbsp;a&nbsp;&nbsp;<span>Plance</span>
             </h1>
+            <p class="hero-subtitle">
+                Aprende a integrarte con Place to Pay mediante ejemplos prácticos, guías y recursos diseñados para
+                acompañarte durante el proceso.
+            </p>
+
+            <!-- <section class="hero-card p-4 p-lg-5">
+                <div class="row align-items-center g-4">
+                    <div class="col-lg-7">
+                        <h1 class="display-5 fw-bold mt-3 mb-3">Nuevo en Place to Pay?</h1>
+                        <p class="lead mb-0">Por donde te gustaria comenzar</p>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="hero-panel" id="lista-integraciones">
+                            <ul class="mb-0 ps-3 hero-panel-list">
+                                <li><a href="sesiones.php">Explora los Ejemplos de integración</a></li>
+                                <li><a href="guias/guia-user.php">Lee la Guía de usuario</a></li>
+                                <li><a href="guias/guia-developer.php">Lee la Guía developer</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section> -->
+
         </section>
-
-        <!-- <section id="heroPanel" class="hero-panel">
-        </section> -->
-
-
 
         <section class="py-0 resources-section">
             <div class="hero-intro">
@@ -70,42 +83,86 @@ if (!isset($_SESSION['usuario'])) {
 
             <div class="row row-cols-1 row-cols-md-3 g-4" id="tarjetas">
                 <div class="col">
-                    <a href="sesiones.php" id="sesiones" class="resource-card">
-                        <div class="resource-icon">
-                            <i class="bi bi-lightbulb-fill"></i>
+                    <div class="resource-card-wrap">
+                        <a href="sesiones.php" id="sesiones" class="resource-card">
+                            <div class="resource-icon">
+                                <i class="bi bi-lightbulb-fill"></i>
+                            </div>
+                            <h3>Ejemplos de integraciones</h3>
+                            <p>Aquí podrás ver como seria el proceso de compra dentro del sitio web de un comercio y que
+                                tipo de
+                                integración con Place to Pay se asocia
+                                ese flujo.</p>
+                            <span class="resource-cta">Ver ejemplos <i class="bi bi-arrow-right"></i></span>
+                        </a>
+                        <div class="resource-help-wrap">
+                            <button class="resource-help" type="button"
+                                aria-label="Más información sobre ejemplos de integraciones"
+                                aria-describedby="help-sesiones">
+                                <i class="bi bi-question-lg" aria-hidden="true"></i>
+                            </button>
+                            <div class="resource-help-popover" id="help-sesiones" role="tooltip">
+                                <strong>¿Qué encontrarás aquí?</strong>
+                                <p>Podrás recorrer una compra como la que viviría un cliente: elegir un producto,
+                                    iniciar el pago y observar qué ocurre detrás de cada paso hasta recibir la respuesta
+                                    de Place to Pay.</p>
+                            </div>
                         </div>
-                        <h3>Ejemplos de integraciones</h3>
-                        <p>Aquí podrás ver como seria el proceso de compra dentro del sitio web de un comercio y que
-                            tipo de
-                            integración con Place to Pay se asocia
-                            ese flujo.</p>
-                        <span class="resource-cta">Ver ejemplos <i class="bi bi-arrow-right"></i></span>
-                    </a>
+                    </div>
                 </div>
 
                 <div class="col">
-                    <a href="guias/guia-user.php" id="guia-user" class="resource-card">
-                        <div class="resource-icon">
-                            <i class="bi bi-book-half"></i>
+                    <div class="resource-card-wrap">
+                        <a href="guias/guia-user.php" id="guia-user" class="resource-card">
+                            <div class="resource-icon">
+                                <i class="bi bi-book-half"></i>
+                            </div>
+                            <h3>Guía de usuario</h3>
+                            <p>Aprende sobre PlacetoPay y conoce los principales conceptos, términos y
+                                soluciones relacionados con la integración de comercios, pagos, suscripciones y
+                                transacciones en la plataforma.</p>
+                            <span class="resource-cta">Leer guía <i class="bi bi-arrow-right"></i></span>
+                        </a>
+                        <div class="resource-help-wrap">
+                            <button class="resource-help" type="button"
+                                aria-label="Más información sobre la guía de usuario" aria-describedby="help-guia-user">
+                                <i class="bi bi-question-lg" aria-hidden="true"></i>
+                            </button>
+                            <div class="resource-help-popover" id="help-guia-user" role="tooltip">
+                                <strong>¿Qué encontrarás aquí?</strong>
+                                <p>Es un punto de partida para familiarizarte con el vocabulario y las decisiones
+                                    habituales de un pago digital, incluso si todavía no sabes cómo se conectan los
+                                    sistemas.</p>
+                            </div>
                         </div>
-                        <h3>Guía de usuario</h3>
-                        <p>Aprende sobre PlacetoPay y conoce los principales conceptos, términos y
-                            soluciones relacionados con la integración de comercios, pagos, suscripciones y
-                            transacciones en la plataforma.</p>
-                        <span class="resource-cta">Leer guía <i class="bi bi-arrow-right"></i></span>
-                    </a>
+                    </div>
                 </div>
 
                 <div class="col">
-                    <a href="guias/guia-developer.php" id="guia-developer" class="resource-card">
-                        <div class="resource-icon">
-                            <i class="bi bi-code-slash"></i>
+                    <div class="resource-card-wrap">
+                        <a href="guias/guia-developer.php" id="guia-developer" class="resource-card">
+                            <div class="resource-icon">
+                                <i class="bi bi-code-slash"></i>
+                            </div>
+                            <h3>Guía developer</h3>
+                            <p>Accede a la parte técnica de la integración, estructura del proyecto y
+                                recursos clave para implementar los servicios de PlacetoPay de forma ordenada.</p>
+                            <span class="resource-cta">Interactuar con la guía <i class="bi bi-arrow-right"></i></span>
+                        </a>
+                        <div class="resource-help-wrap">
+                            <button class="resource-help" type="button"
+                                aria-label="Más información sobre la guía developer"
+                                aria-describedby="help-guia-developer">
+                                <i class="bi bi-question-lg" aria-hidden="true"></i>
+                            </button>
+                            <div class="resource-help-popover" id="help-guia-developer" role="tooltip">
+                                <strong>¿Qué encontrarás aquí?</strong>
+                                <p>Cuando quieras pasar de entender el flujo a construirlo, aquí verás la estructura
+                                    técnica, los recursos necesarios y la forma de llevar la integración a tu propio
+                                    comercio.</p>
+                            </div>
                         </div>
-                        <h3>Guía developer</h3>
-                        <p>Accede a la parte técnica de la integración, estructura del proyecto y
-                            recursos clave para implementar los servicios de PlacetoPay de forma ordenada.</p>
-                        <span class="resource-cta">Interactuar con la guía <i class="bi bi-arrow-right"></i></span>
-                    </a>
+                    </div>
                 </div>
             </div>
         </section>

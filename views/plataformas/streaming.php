@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php require_once '../php/theme_attr.php'; ?>
-<html lang="es"<?= $data_theme_attr ?? '' ?>>
+<html lang="es" <?= $data_theme_attr ?? '' ?>>
 
 <head>
     <meta charset="UTF-8">
@@ -13,8 +13,11 @@
         href="https://fonts.googleapis.com/css?family=Barlow:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic"
         rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/driver.js@1.3.1/dist/driver.css">
     <link rel="stylesheet" href="../assets/css/estilos.css">
+    <link rel="stylesheet"
+        href="../assets/css/components/driver-theme.css?v=<?php echo filemtime($__publicDir . '/../assets/css/components/driver-theme.css'); ?>">
+    
 </head>
 <link rel="stylesheet" href="../assets/css/pages/plataformas/streaming.css">
 
@@ -230,6 +233,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/validaciones.js"></script>
     <script src="assets/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/driver.js@1.3.1/dist/driver.js.iife.js"></script>
+    <script src="../assets/js/components/driver-tours/tour-streaming.js"></script>
+</body>
 </body>
 
 </html>

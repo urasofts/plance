@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 popover: {
                     title: 'Solicitud desde el backend',
                     description:
-                        'El backend recibe los datos de la compra, crea la orden y envía a Place to Pay una solicitud autenticada con la referencia, descripción, moneda, total, URL de retorno y demás datos necesarios para iniciar la -ión de pago.'
+                        'El backend recibe los datos de la compra, crea la orden y envía a Place to Pay una solicitud autenticada con la referencia, descripción, moneda, total, URL de retorno y demás datos necesarios para iniciar la sesión de pago.'
                 }
             },
             {

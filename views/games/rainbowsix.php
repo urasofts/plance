@@ -13,8 +13,11 @@
         href="https://fonts.googleapis.com/css?family=Barlow:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic"
         rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/driver.js@1.3.1/dist/driver.css">
 
     <link rel="stylesheet" href="../assets/css/estilos.css">
+    <link rel="stylesheet"
+        href="../assets/css/components/driver-theme.css?v=<?php echo filemtime($__publicDir . '/../assets/css/components/driver-theme.css'); ?>">
 </head>
 <link rel="stylesheet" href="../assets/css/pages/games/rainbowsix.css">
 
@@ -39,7 +42,7 @@
 
             <!-- PLATINUM -->
             <p class="section-label">💎 Platinum — Moneda del juego</p>
-            <div class="products-grid">
+            <div class="products-grid" id="bloque-productos">
                 <div class="product-card" data-id="p1" data-nombre="60 Platinum" data-precio="4900">
                     <img class="product-card__icon" src="https://cdn.donatov.net/cover/pack-14533-1771960014.webp"
                         alt="">
@@ -182,7 +185,7 @@
                 </div>
 
                 <button class="btn-pagar" id="btnPagar" onclick="pagar()">
-                    <i class="bi bi-lock-fill"></i> Pagar ahora
+                    <i class="bi bi-lock-fill"></i> Comprar ahora
                 </button>
                 <div class="security-note">
                     <i class="bi bi-shield-check"></i>
@@ -194,6 +197,8 @@
 
     <script src="../assets/js/pages/games/rainbowsix.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/driver.js@1.3.1/dist/driver.js.iife.js"></script>
+    <script src="../assets/js/components/driver-tours/tour-rainbowsix.js"></script>
 </body>
 
 </html>

@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const iniciarTutorialButton = document.getElementById(
         'navbar-iniciar-tutorial'
     );
-
     const cerrarTutorialButton = document.getElementById(
         'navbar-cerrar-tutorial'
     );
@@ -19,7 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
         iniciarTutorialButton.innerHTML = tutorialIniciado
             ? '<i class="bi bi-arrow-repeat"></i> Repetir tutorial'
             : '<i class="bi bi-question-circle"></i> Iniciar tutorial';
-
         cerrarTutorialButton.hidden = !tutorialIniciado;
         cerrarTutorialButton.innerHTML =
             estadoTutorial === 'pendiente'
@@ -35,20 +33,16 @@ document.addEventListener('DOMContentLoaded', () => {
         nextBtnText: 'Siguiente',
         prevBtnText: 'Atrás',
         doneBtnText: 'Finalizar',
-
         onDestroyStarted: () => {
             if (localStorage.getItem('tutorial') === 'activo') {
                 localStorage.setItem('tutorial', 'pendiente');
             }
-
             driver.destroy();
         },
-
         onDestroyed: () => {
             document.body.classList.remove('tutorial-active');
             actualizarBotonTutorial();
         },
-
         steps: [
             {
                 element: '#bloque-productos',
@@ -57,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     description:
                         'En un flujo de compra normal, el usuario escogería uno de los productos disponibles. Este catálogo ilustra cómo podría presentarse la oferta de tu comercio.'
                 }
-            },
+            },         
             {
                 element: '#btnBuy',
                 popover: {
@@ -83,15 +77,14 @@ document.addEventListener('DOMContentLoaded', () => {
         ]
     });
 
-    function iniciarTourCod() {
+    function iniciarTour() {
         localStorage.setItem('tutorial', 'activo');
         document.body.classList.add('tutorial-active');
         actualizarBotonTutorial();
         driver.drive();
     }
 
-    iniciarTutorialButton.addEventListener('click', iniciarTourCod);
-
+    iniciarTutorialButton.addEventListener('click', iniciarTour);
     cerrarTutorialButton.addEventListener('click', (event) => {
         event.preventDefault();
         event.stopPropagation();
@@ -115,6 +108,6 @@ document.addEventListener('DOMContentLoaded', () => {
     actualizarBotonTutorial();
 
     if (localStorage.getItem('tutorial') === 'pendiente') {
-        iniciarTourCod();
+        iniciarTour();
     }
 });

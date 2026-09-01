@@ -2,9 +2,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const iniciarTutorialButton = document.getElementById(
         'navbar-iniciar-tutorial'
     );
+    const tutorialQuickStartButton = document.querySelector(
+        '.tutorial-trigger'
+    );
 
     const cerrarTutorialButton = document.getElementById(
         'navbar-cerrar-tutorial'
+    );
+
+    const tutorialHelpButton = document.getElementById(
+        'navbar-tutorial-help'
+    );
+
+    const tutorialHelpWrap = document.getElementById(
+        'tutorial-help-wrap'
     );
 
     if (!iniciarTutorialButton || !cerrarTutorialButton || !window.driver?.js) {
@@ -20,7 +31,16 @@ document.addEventListener('DOMContentLoaded', () => {
             ? '<i class="bi bi-arrow-repeat"></i> Repetir tutorial'
             : '<i class="bi bi-question-circle"></i> Iniciar tutorial';
 
+        iniciarTutorialButton.hidden = false;
         cerrarTutorialButton.hidden = !tutorialIniciado;
+
+        if (tutorialHelpButton) {
+            tutorialHelpButton.hidden = tutorialIniciado;
+        }
+
+        if (tutorialHelpWrap) {
+            tutorialHelpWrap.style.display = tutorialIniciado ? 'none' : 'inline-flex';
+        }
 
         cerrarTutorialButton.innerHTML =
             estadoTutorial === 'pendiente'
@@ -53,15 +73,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
         steps: [
             {
-                element: '#tarjetas',
+                element: '#sesiones',
                 disableActiveInteraction: true,
                 popover: {
                     title: 'Ejemplos de integraciones',
-                    description: `
-            Estas secciones están organizadas para acompañarte desde una visión general,
-            hasta los aspectos más especializados. Selecciona la que mejor se adapte a tu perfil
-            o al punto en el que te encuentres dentro de tu proceso de integración.
-                     `
+                    description:
+                        'Podrás recorrer una compra como la que viviría un cliente: elegir un producto, iniciar el pago y observar qué ocurre detrás de cada paso hasta recibir la respuesta de Place to Pay.'
+                }
+            },
+            {
+                element: '#guia-user',
+                disableActiveInteraction: true,
+                popover: {
+                    title: 'Guía de usuario',
+                    description:
+                        'Es un punto de partida para familiarizarte con el vocabulario y las decisiones habituales de un pago digital, incluso si todavía no sabes cómo se conectan los sistemas.'
+                }
+            },
+            {
+                element: '#guia-developer',
+                disableActiveInteraction: true,
+                popover: {
+                    title: 'Guía developer',
+                    description:
+                        'Cuando quieras pasar de entender el flujo a construirlo, aquí verás la estructura técnica, los recursos necesarios y la forma de llevar la integración a tu propio comercio.'
                 }
             },
             {
@@ -84,6 +119,10 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     iniciarTutorialButton.addEventListener('click', iniciarTourIndex2);
+
+    if (tutorialQuickStartButton) {
+        tutorialQuickStartButton.addEventListener('click', iniciarTourIndex2);
+    }
 
     cerrarTutorialButton.addEventListener('click', (event) => {
         event.preventDefault();
